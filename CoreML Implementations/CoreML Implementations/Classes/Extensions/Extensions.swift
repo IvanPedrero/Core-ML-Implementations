@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 extension UIView {
     func roundBorders(radius:CGFloat) {
@@ -18,4 +19,15 @@ extension UIView {
         self.layer.shadowOpacity = 0.2
         self.layer.shadowOffset = .zero
     }
+}
+
+extension AVCaptureVideoPreviewLayer {
+    
+    func resizeSubview(with bounds:CGRect){
+        self.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.bounds = bounds
+        self.position = CGPoint(x: bounds.midX, y: bounds.midY)
+        self.contentsGravity = CALayerContentsGravity.resize
+    }
+    
 }

@@ -6,130 +6,142 @@
 //
 
 import UIKit
+import Vision
+import AVFoundation
 
-class ImageClassificationVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ImageClassificationVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
-    @IBOutlet weak var inView: UIView!
+    // UI variables.
+    @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var outView: UIView!
-    @IBOutlet weak var analyzeButton: UIButton!
+    @IBOutlet weak var resultTextView: UITextView!
     
-    @IBOutlet weak var imageView: UIImageView!
+    // Core ML model variables.
+    let coreMLModel: MLModel = {
+        do {
+            let config = MLModelConfiguration()
+            return try MobileNetV2(configuration: config).model
+        } catch {
+            fatalError("Couldn't create the model: \(error)")
+        }
+    }()
     
-    private var imageChanged:Bool = false
+    // Video variables.
+    var previewLayer:AVCaptureVideoPreviewLayer!
+    
+    
+    // MARK:- View lyfe cycle methods.
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        setRecognizers()
-        
-        inView.roundBorders(radius: 15)
-        inView.drawShadow(radius: 10)
+        setUpView()
+        setUpCamera()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        previewLayer.resizeSubview(with: videoPreview.bounds)
+    }
+    
+    // MARK:- View style methods.
+    
+    /**
+     Give some style to the view.
+     */
+    func setUpView(){
         outView.roundBorders(radius: 15)
         outView.drawShadow(radius: 10)
-        analyzeButton.roundBorders(radius: 10)
+        videoPreview.drawShadow(radius: 10)
     }
     
-    // MARK:- Image tap methods
+    // MARK:- Video capture methods.
     
-    private func setRecognizers(){
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onImageTap(tapGestureRecognizer:)))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    @objc func onImageTap(tapGestureRecognizer: UITapGestureRecognizer) {
-                
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            showImageOptions(isIpad: true)
-        }else{
-            showImageOptions(isIpad: false)
-        }
+    /**
+     Use this function to initialize the capture sesssion and to add the preview layer to a view.
+     */
+    func setUpCamera(){
+        // Create the capture session.
+        let captureSession = AVCaptureSession()
         
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
+        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
         
+        captureSession.addInput(input)
+        captureSession.startRunning()
+        
+        // Create the layer for the view.
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        videoPreview.layer.addSublayer(previewLayer)
+        previewLayer.frame = videoPreview.frame
+        previewLayer.resizeSubview(with: videoPreview.bounds)
+        
+        // Analyze what the camera is showing.
+        let dataOutput = AVCaptureVideoDataOutput()
+        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
+        captureSession.addOutput(dataOutput)
     }
     
-    private func showImageOptions(isIpad: Bool){
-        // Shown in iPad.
-        if isIpad {
-            let pictureAlert = UIAlertController(title: "Select picture from...", message: nil, preferredStyle: UIAlertController.Style.alert)
+    /**
+     Notifies the delegate that a new video frame was written.
+     */
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        // Get the image from the pixel buffer.
+        guard let pixelBuffer:CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        
+        // Predict using the model.
+        predictUsingModel(pixelBuffer: pixelBuffer)
+    }
+    
 
-            pictureAlert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action: UIAlertAction!) in
-                self.showCamera()
-            }))
 
-            pictureAlert.addAction(UIAlertAction(title: "Album", style: .default, handler: { (action: UIAlertAction!) in
-                self.showAlbum()
-            }))
+}
 
-            present(pictureAlert, animated: true, completion: nil)
-        }
-        // Shown in iPhone.
-        else{
-            let actionSheet = UIAlertController(title: "Select picture from...", message: nil, preferredStyle: .actionSheet)
-            actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
-                action in
-                self.showCamera()
-            }))
-            actionSheet.addAction(UIAlertAction(title: "Album", style: .default, handler: {
-                action in
-                self.showAlbum()
-            }))
-            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+// MARK:- Machine learning using CoreML extension.
+
+extension ImageClassificationVC {
+    
+    /**
+     Function used to predict what an image will be using a core ml model.
+     - Parameter pixelBuffer: The image saved in the session buffer.
+     */
+    func predictUsingModel(pixelBuffer:CVPixelBuffer) {
+        // Get the Core ML model.
+        guard let model = try? VNCoreMLModel(for: coreMLModel ) else { return }
+
+        // Define the request handler.
+        let request = VNCoreMLRequest(model: model) { (result, error) in
             
-            present(actionSheet, animated: true, completion: nil)
-        }
-    }
-    
-    // MARK: - Photo delgate methods
-    
-    func showCamera(){
-        let cameraPicker = UIImagePickerController()
-        cameraPicker.delegate = self
-        cameraPicker.sourceType = .camera
-        
-        present(cameraPicker, animated: true, completion: nil)
-    }
-    
-    func showAlbum(){
-        let cameraPicker = UIImagePickerController()
-        cameraPicker.delegate = self
-        cameraPicker.sourceType = .savedPhotosAlbum
-        
-        present(cameraPicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imageView.image = image
-            imageChanged = true
+            // Manage the error.
+            if error != nil {
+                print("Error in the request: \(String(describing: error))")
+                return
+            }
+            
+            // Get the results.
+            guard let results = result.results as? [VNClassificationObservation] else { return }
+            guard let firstObservation = results.first else { return }
+            
+            // Show the results in the view.
+            self.showResults(identifier: firstObservation.identifier, confidence: firstObservation.confidence)
         }
         
-        dismiss(animated: true, completion:nil)
+        // Perform the request.
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion:nil)
-    }
-    
-    
-    // MARK:- Analyze methods
-    
-    @IBAction func analyzeAction(_ sender: Any) {
-    
-    }
-    
+    /**
+    This function will show the results in the view using the main thread to update the text.
+     */
+    func showResults(identifier:String, confidence: VNConfidence){
+        DispatchQueue.main.async {
+            self.resultTextView.text = """
+            The object is a \(identifier)
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            % \(confidence) confidence
+            """
+        }
     }
-    */
-
 }
