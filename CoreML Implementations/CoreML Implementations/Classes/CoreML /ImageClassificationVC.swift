@@ -37,12 +37,20 @@ class ImageClassificationVC: UIViewController, AVCaptureVideoDataOutputSampleBuf
 
         // Do any additional setup after loading the view.
         setUpView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Start the camera functions.
         setUpCamera()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        previewLayer.resizeSubview(with: videoPreview.bounds)
+        
+        if previewLayer != nil {
+            previewLayer.resizeSubview(with: videoPreview.bounds)
+        }
+        
     }
     
     // MARK:- View style methods.
@@ -94,8 +102,6 @@ class ImageClassificationVC: UIViewController, AVCaptureVideoDataOutputSampleBuf
         predictUsingModel(pixelBuffer: pixelBuffer)
     }
     
-
-
 }
 
 // MARK:- Machine learning using CoreML extension.

@@ -273,14 +273,54 @@
         <!--Object Detection-->
         <scene sceneID="hYg-ho-JEl">
             <objects>
-                <viewController id="FfE-cN-GIk" sceneMemberID="viewController">
+                <viewController id="FfE-cN-GIk" customClass="ObjectDetectionVC" customModule="CoreML_Implementations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gsl-QC-xu1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49r-Wz-HHE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="394"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2h-gJ-nNF">
+                                <rect key="frame" x="20" y="505" width="374" height="286"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="tbW-cB-zQf">
+                                        <rect key="frame" x="23" y="32" width="328" height="222"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tbW-cB-zQf" secondAttribute="trailing" constant="23" id="FX9-5y-e3R"/>
+                                    <constraint firstItem="tbW-cB-zQf" firstAttribute="leading" secondItem="D2h-gJ-nNF" secondAttribute="leading" constant="23" id="Gnf-kZ-yiQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="tbW-cB-zQf" secondAttribute="bottom" constant="32" id="MRt-VR-nhe"/>
+                                    <constraint firstAttribute="height" constant="286" id="Ryy-5p-42W"/>
+                                    <constraint firstItem="tbW-cB-zQf" firstAttribute="top" secondItem="D2h-gJ-nNF" secondAttribute="top" constant="32" id="T2k-hX-yyy"/>
+                                    <constraint firstAttribute="width" constant="374" id="Zkq-tk-qsm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="f4q-SU-mXI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D2h-gJ-nNF" firstAttribute="top" secondItem="49r-Wz-HHE" secondAttribute="bottom" constant="23" id="ARX-NP-B0T"/>
+                            <constraint firstItem="f4q-SU-mXI" firstAttribute="trailing" secondItem="D2h-gJ-nNF" secondAttribute="trailing" constant="20" id="PDu-59-EsE"/>
+                            <constraint firstItem="49r-Wz-HHE" firstAttribute="top" secondItem="f4q-SU-mXI" secondAttribute="top" id="Rbt-7X-nJg"/>
+                            <constraint firstItem="49r-Wz-HHE" firstAttribute="trailing" secondItem="f4q-SU-mXI" secondAttribute="trailing" id="fo6-d5-R2Y"/>
+                            <constraint firstItem="f4q-SU-mXI" firstAttribute="bottom" secondItem="D2h-gJ-nNF" secondAttribute="bottom" constant="22" id="giU-J3-zNI"/>
+                            <constraint firstItem="49r-Wz-HHE" firstAttribute="leading" secondItem="f4q-SU-mXI" secondAttribute="leading" id="spW-E7-FKj"/>
+                            <constraint firstItem="D2h-gJ-nNF" firstAttribute="leading" secondItem="f4q-SU-mXI" secondAttribute="leading" constant="20" id="zdL-RU-t2R"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Object Detection" image="camera.metering.partial" catalog="system" id="a2H-WB-jmh"/>
+                    <connections>
+                        <outlet property="outView" destination="D2h-gJ-nNF" id="Zf0-2H-iAL"/>
+                        <outlet property="resultTextView" destination="tbW-cB-zQf" id="oYf-0K-wmk"/>
+                        <outlet property="videoPreview" destination="49r-Wz-HHE" id="7H0-0w-Xoz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdO-XK-FOE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -297,7 +337,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAy-xl-XZH">
                                 <rect key="frame" x="20" y="505" width="374" height="286"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="First prediction : banana 15 %  Second prediction: ...  Third prediction: ..." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="qDE-gM-z3O">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="qDE-gM-z3O">
                                         <rect key="frame" x="23" y="32" width="328" height="222"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
