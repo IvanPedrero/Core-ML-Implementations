@@ -19,10 +19,11 @@ class TextClassificationViewController: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputTextView: UITextView!
     
-    
-    let SPAM_ID = "spam"
-    let SPAM_OUT_TEXT = "The input text was detected as spam!"
-    let NOT_SPAM_OUT_TEXT = "The input text is a safe message..."
+    // (0 = negative, 2 = neutral, 4 = positive)
+    let NEGATIVE_SENTIMENT = "0"
+    let NEUTRAL_SENTIMENT = "1"
+    let POSITIVE_SENTIMENT = "4"
+    let DATASET_URL = "http://help.sentiment140.com/"
     
     
     // Core ML model variables.
@@ -51,16 +52,32 @@ class TextClassificationViewController: UIViewController {
     
     @IBAction func predictText(_ sender: Any) {
         
+        var output = "Neutral sentiment detected 😶"
+        
         if inputTextField.text?.isEmpty == true {
-            // Show alert.
+            outputTextView.text = output
             return
         }
         
         let prediction = predictData(input: inputTextField.text!)
         
-        let output = prediction == SPAM_ID ? SPAM_OUT_TEXT : NOT_SPAM_OUT_TEXT
         
+        if prediction == NEGATIVE_SENTIMENT{
+            output = "Negative sentiment detected 😠"
+        }
+        else if prediction == NEUTRAL_SENTIMENT {
+            output = "Neutral sentiment detected 😶"
+        }
+        else if prediction == POSITIVE_SENTIMENT {
+            output = "Positive sentiment detected 😄"
+        }
+         
         outputTextView.text = output
+    }
+    
+    
+    @IBAction func openDataSources(_ sender: Any) {
+        openWebsite(site: DATASET_URL)
     }
     
     
@@ -73,6 +90,13 @@ class TextClassificationViewController: UIViewController {
             return prediction.label
         }
         return ""
+    }
+    
+    
+    // MARK: - Data Sources Link Methods
+    
+    func openWebsite(site:String){
+        if let url = URL(string: site) { UIApplication.shared.open(url) }
     }
     
 

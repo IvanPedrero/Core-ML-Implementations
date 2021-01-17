@@ -271,7 +271,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jog-HA-o4i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598.55072463768124" y="0.6696428571428571"/>
+            <point key="canvasLocation" x="-246" y="171"/>
         </scene>
         <!--Object Detection-->
         <scene sceneID="hYg-ho-JEl">
@@ -429,7 +429,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSa-XG-QbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-329" y="2"/>
+            <point key="canvasLocation" x="-1175" y="171"/>
         </scene>
         <!--Text Classification-->
         <scene sceneID="wXI-e3-fiB">
@@ -482,7 +482,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZg-VT-5yn">
                                         <rect key="frame" x="23" y="21" width="328" height="152"/>
                                         <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -494,26 +494,26 @@
                                     <constraint firstItem="OZg-VT-5yn" firstAttribute="top" secondItem="BXN-ag-dGJ" secondAttribute="top" constant="21" id="kid-eJ-4jc"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPAM Classifier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQT-Hy-UuJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sentiment Text Classifier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQT-Hy-UuJ">
                                 <rect key="frame" x="77" y="101" width="261" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="LhL-b1-RjY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a frase below to analyse if it's spam" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIG-t7-XYr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a phrase below to analyze the sentiment in the text " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIG-t7-XYr">
                                 <rect key="frame" x="70" y="144" width="275" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="zvv-PG-X4O"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpD-pH-6aC">
-                                <rect key="frame" x="138.5" y="204" width="137" height="39"/>
+                                <rect key="frame" x="138.5" y="201" width="137" height="39"/>
                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="137" id="6oX-Wt-rnU"/>
@@ -522,6 +522,9 @@
                                 <state key="normal" title="Dataset Source">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="openDataSources:" destination="IhO-v0-Zk4" eventType="touchUpInside" id="NYM-ti-5Yq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="naz-YC-PQG"/>
@@ -533,11 +536,11 @@
                             <constraint firstItem="iIG-t7-XYr" firstAttribute="top" secondItem="dQT-Hy-UuJ" secondAttribute="bottom" constant="8" symbolic="YES" id="GVf-jw-rv8"/>
                             <constraint firstItem="naz-YC-PQG" firstAttribute="trailing" secondItem="dQT-Hy-UuJ" secondAttribute="trailing" constant="76" id="GXv-3r-YLy"/>
                             <constraint firstItem="BXN-ag-dGJ" firstAttribute="leading" secondItem="naz-YC-PQG" secondAttribute="leading" constant="20" id="HOV-P6-0oB"/>
-                            <constraint firstItem="HpD-pH-6aC" firstAttribute="top" secondItem="iIG-t7-XYr" secondAttribute="bottom" constant="11" id="Hf8-jc-DBa"/>
+                            <constraint firstItem="HpD-pH-6aC" firstAttribute="top" secondItem="iIG-t7-XYr" secondAttribute="bottom" constant="8" id="Hf8-jc-DBa"/>
                             <constraint firstItem="BXN-ag-dGJ" firstAttribute="top" secondItem="3UU-gL-hUw" secondAttribute="bottom" constant="33" id="Q1H-Sk-rRe"/>
                             <constraint firstItem="dQT-Hy-UuJ" firstAttribute="top" secondItem="naz-YC-PQG" secondAttribute="top" constant="13" id="RN4-vH-31c"/>
                             <constraint firstItem="naz-YC-PQG" firstAttribute="trailing" secondItem="3UU-gL-hUw" secondAttribute="trailing" constant="20" id="TeV-Pa-SRf"/>
-                            <constraint firstItem="3UU-gL-hUw" firstAttribute="top" secondItem="HpD-pH-6aC" secondAttribute="bottom" constant="11" id="cBc-tp-xU5"/>
+                            <constraint firstItem="3UU-gL-hUw" firstAttribute="top" secondItem="HpD-pH-6aC" secondAttribute="bottom" constant="14" id="cBc-tp-xU5"/>
                             <constraint firstItem="naz-YC-PQG" firstAttribute="trailing" secondItem="BXN-ag-dGJ" secondAttribute="trailing" constant="20" id="eee-P9-Ott"/>
                             <constraint firstItem="naz-YC-PQG" firstAttribute="bottom" secondItem="BXN-ag-dGJ" secondAttribute="bottom" constant="46" id="jxc-rC-sXH"/>
                             <constraint firstItem="3UU-gL-hUw" firstAttribute="leading" secondItem="naz-YC-PQG" secondAttribute="leading" constant="20" id="lDq-S9-GMu"/>
@@ -558,7 +561,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmS-cx-HNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628.985507246377" y="468.75"/>
+            <point key="canvasLocation" x="2629" y="423"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iTh-6G-MYB">
@@ -574,11 +577,127 @@
                     </tabBar>
                     <connections>
                         <segue destination="IhO-v0-Zk4" kind="relationship" relationship="viewControllers" id="SfQ-QF-33B"/>
+                        <segue destination="Fr4-K9-l3G" kind="relationship" relationship="viewControllers" id="5np-Og-ltA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCr-7a-gia" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1629" y="470"/>
+            <point key="canvasLocation" x="1629" y="670"/>
+        </scene>
+        <!--Word Tagger-->
+        <scene sceneID="yae-wR-AlH">
+            <objects>
+                <viewController id="Fr4-K9-l3G" customClass="WordTaggerViewController" customModule="CoreML_Implementations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A5n-G3-9Xh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wt9-Ts-Z7h">
+                                <rect key="frame" x="20" y="217" width="374" height="285"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" placeholder="Enter text to analyze..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxH-AQ-lQI">
+                                        <rect key="frame" x="22" y="19" width="330" height="193"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="193" id="VjZ-eU-2YJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI2-Ye-Kzv">
+                                        <rect key="frame" x="118.5" y="230" width="137" height="38"/>
+                                        <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="0WH-jr-acy"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="137" id="nkA-RR-5hm"/>
+                                        </constraints>
+                                        <state key="normal" title="Predict">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="predictText:" destination="Fr4-K9-l3G" eventType="touchUpInside" id="2au-sT-5bq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="oxH-AQ-lQI" secondAttribute="trailing" constant="22" id="4Wg-Kb-9JL"/>
+                                    <constraint firstItem="oxH-AQ-lQI" firstAttribute="leading" secondItem="wt9-Ts-Z7h" secondAttribute="leading" constant="22" id="8cH-W9-zhf"/>
+                                    <constraint firstAttribute="width" constant="374" id="Jpg-PW-w1a"/>
+                                    <constraint firstItem="wI2-Ye-Kzv" firstAttribute="top" secondItem="oxH-AQ-lQI" secondAttribute="bottom" constant="18" id="O5f-Zf-cYw"/>
+                                    <constraint firstItem="wI2-Ye-Kzv" firstAttribute="centerX" secondItem="wt9-Ts-Z7h" secondAttribute="centerX" id="UWk-HS-KgS"/>
+                                    <constraint firstItem="oxH-AQ-lQI" firstAttribute="top" secondItem="wt9-Ts-Z7h" secondAttribute="top" constant="19" id="cqf-Ln-EV0"/>
+                                    <constraint firstAttribute="height" constant="285" id="lLk-ee-4SD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jt8-xu-tiP" userLabel="Out View">
+                                <rect key="frame" x="20" y="535" width="374" height="232"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqe-c1-i2e">
+                                        <rect key="frame" x="23" y="21" width="328" height="189"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="Jqe-c1-i2e" firstAttribute="top" secondItem="jt8-xu-tiP" secondAttribute="top" constant="21" id="gCw-Hb-qwF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jqe-c1-i2e" secondAttribute="trailing" constant="23" id="iFw-Ed-hRg"/>
+                                    <constraint firstItem="Jqe-c1-i2e" firstAttribute="leading" secondItem="jt8-xu-tiP" secondAttribute="leading" constant="23" id="uNh-aB-auK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jqe-c1-i2e" secondAttribute="bottom" constant="22" id="xwB-P9-ihl"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Word Tagger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXY-CV-CrT">
+                                <rect key="frame" x="77" y="101" width="261" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="j6l-Pb-7PX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a phrase below to analyze if is a query for Apple products" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyg-xZ-inb">
+                                <rect key="frame" x="70" y="144" width="275" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="c39-Ap-BNH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Ue-7q-QkF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jt8-xu-tiP" firstAttribute="leading" secondItem="9Ue-7q-QkF" secondAttribute="leading" constant="20" id="8Cj-pb-NIw"/>
+                            <constraint firstItem="wt9-Ts-Z7h" firstAttribute="top" secondItem="qyg-xZ-inb" secondAttribute="bottom" constant="24" id="I1n-oC-CXP"/>
+                            <constraint firstItem="qyg-xZ-inb" firstAttribute="leading" secondItem="9Ue-7q-QkF" secondAttribute="leading" constant="70" id="IC4-sg-t3W"/>
+                            <constraint firstItem="qyg-xZ-inb" firstAttribute="top" secondItem="WXY-CV-CrT" secondAttribute="bottom" constant="8" symbolic="YES" id="Rus-i7-JrQ"/>
+                            <constraint firstItem="jt8-xu-tiP" firstAttribute="top" secondItem="wt9-Ts-Z7h" secondAttribute="bottom" constant="33" id="Uy5-oA-mad"/>
+                            <constraint firstItem="wt9-Ts-Z7h" firstAttribute="leading" secondItem="9Ue-7q-QkF" secondAttribute="leading" constant="20" id="ZlE-BJ-bvv"/>
+                            <constraint firstItem="9Ue-7q-QkF" firstAttribute="trailing" secondItem="WXY-CV-CrT" secondAttribute="trailing" constant="76" id="dke-bV-k4I"/>
+                            <constraint firstItem="9Ue-7q-QkF" firstAttribute="trailing" secondItem="qyg-xZ-inb" secondAttribute="trailing" constant="69" id="eEc-TT-e83"/>
+                            <constraint firstItem="WXY-CV-CrT" firstAttribute="top" secondItem="9Ue-7q-QkF" secondAttribute="top" constant="13" id="eqn-9f-jfR"/>
+                            <constraint firstItem="WXY-CV-CrT" firstAttribute="leading" secondItem="9Ue-7q-QkF" secondAttribute="leading" constant="77" id="faP-3y-ZEB"/>
+                            <constraint firstItem="9Ue-7q-QkF" firstAttribute="trailing" secondItem="jt8-xu-tiP" secondAttribute="trailing" constant="20" id="itI-ql-Vyc"/>
+                            <constraint firstItem="9Ue-7q-QkF" firstAttribute="bottom" secondItem="jt8-xu-tiP" secondAttribute="bottom" constant="46" id="oIq-3f-kpo"/>
+                            <constraint firstItem="9Ue-7q-QkF" firstAttribute="trailing" secondItem="wt9-Ts-Z7h" secondAttribute="trailing" constant="20" id="xHp-IT-NOw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Word Tagger" image="tag.circle" catalog="system" id="OTW-la-w8B">
+                        <color key="badgeColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="inView" destination="wt9-Ts-Z7h" id="OgY-FG-iyo"/>
+                        <outlet property="inputTextField" destination="oxH-AQ-lQI" id="GNu-Ww-quM"/>
+                        <outlet property="outView" destination="jt8-xu-tiP" id="kNV-Yn-3pD"/>
+                        <outlet property="outputTextView" destination="Jqe-c1-i2e" id="Mva-KM-EEt"/>
+                        <outlet property="predictButton" destination="wI2-Ye-Kzv" id="LrW-g3-K45"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUA-uQ-24n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2628.985507246377" y="1076.7857142857142"/>
         </scene>
     </scenes>
     <resources>
@@ -588,6 +707,7 @@
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="speaker.wave.2" catalog="system" width="128" height="90"/>
         <image name="tablecells" catalog="system" width="128" height="93"/>
+        <image name="tag.circle" catalog="system" width="128" height="121"/>
         <image name="text.magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="video" catalog="system" width="128" height="83"/>
         <image name="waveform.path" catalog="system" width="128" height="117"/>

@@ -1,0 +1,118 @@
+[
+    {
+        "tokens": [
+            "I",
+            "want",
+            "an",
+            "iPhone"
+        ],
+        "labels": [
+            "NONE",
+            "NONE",
+            "NONE",
+            "PROD"
+        ]
+    },
+    {
+        "tokens": [
+            "Mac",
+            "M1",
+            "price",
+            "USA"
+        ],
+        "labels": [
+            "PROD",
+            "PROD",
+            "NONE",
+            "NONE"
+        ]
+    },
+    {
+        "tokens": [
+            "Amazon",
+            "iPad"
+        ],
+        "labels": [
+            "NONE",
+            "PROD"
+        ]
+    },
+    {
+        "tokens": [
+            "Where",
+            "to",
+            "buy",
+            "an",
+            "iPhone"
+        ],
+        "labels": [
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE",
+            "PROD"
+        ]
+    },
+    {
+        "tokens": [
+            "How",
+            "to",
+            "create",
+            "a",
+            "iPad",
+            "app",
+            "?"
+        ],
+        "labels": [
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE",
+            "PROD",
+            "NONE",
+            "NONE"
+        ]
+    },
+    {
+        "tokens": [
+            "Where",
+            "can",
+            "I",
+            "buy",
+            "an",
+            "Apple",
+            "Watch",
+            "?"
+        ],
+        "labels": [
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE",
+            "PROD",
+            "PROD",
+            "NONE"
+        ]
+    },
+    {
+        "tokens": [
+            "Is",
+            "the",
+            "Apple",
+            "Pencil",
+            "worth",
+            "it",
+            "?"
+        ],
+        "labels": [
+            "NONE",
+            "NONE",
+            "PROD",
+            "PROD",
+            "NONE",
+            "NONE",
+            "NONE"
+        ]
+    }
+]
