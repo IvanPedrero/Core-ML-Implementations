@@ -146,7 +146,7 @@ extension ImageClassificationVC {
             The object is a \(identifier)
 
 
-            % \(confidence) confidence
+            % \(confidence * 100) confidence
             """
         }
     }
