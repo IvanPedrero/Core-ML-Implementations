@@ -17,6 +17,7 @@
 		823C3D9E255A5D5D0080EF0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C3D9D255A5D5D0080EF0F /* Extensions.swift */; };
 		823C3DA3255A5ED10080EF0F /* ImageClassificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C3DA2255A5ED10080EF0F /* ImageClassificationVC.swift */; };
 		828DFEA325B3B6CA00F36B54 /* TextClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DFEA225B3B6CA00F36B54 /* TextClassificationViewController.swift */; };
+		8294B3C025B540DD00B79B51 /* SoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8294B3BF25B540DD00B79B51 /* SoundClassifier.mlmodel */; };
 		82BF84282560AD41007A3396 /* ObjectDetectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF84272560AD41007A3396 /* ObjectDetectionVC.swift */; };
 		82BF842B2560BBC8007A3396 /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 82BF842A2560BBC8007A3396 /* YOLOv3Tiny.mlmodel */; };
 		82E0B7CB25B4DE50006F18BC /* TextClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 82E0B7CA25B4DE50006F18BC /* TextClassifier.mlmodel */; };
@@ -36,6 +37,7 @@
 		823C3D9D255A5D5D0080EF0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		823C3DA2255A5ED10080EF0F /* ImageClassificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationVC.swift; sourceTree = "<group>"; };
 		828DFEA225B3B6CA00F36B54 /* TextClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextClassificationViewController.swift; sourceTree = "<group>"; };
+		8294B3BF25B540DD00B79B51 /* SoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SoundClassifier.mlmodel; path = "Sound Classifier/SoundClassifier.mlmodel"; sourceTree = "<group>"; };
 		82BF84272560AD41007A3396 /* ObjectDetectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionVC.swift; sourceTree = "<group>"; };
 		82BF842A2560BBC8007A3396 /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
 		82E0B7CA25B4DE50006F18BC /* TextClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TextClassifier.mlmodel; path = "Text Classifier/TextClassifier.mlmodel"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				82E0B7CA25B4DE50006F18BC /* TextClassifier.mlmodel */,
 				8209063725B4B479004132B9 /* WordTagger.mlmodel */,
+				8294B3BF25B540DD00B79B51 /* SoundClassifier.mlmodel */,
 			);
 			path = CreateML;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				823C3D7F255A4F5C0080EF0F /* SceneDelegate.swift in Sources */,
 				82FD3E66255F8CBA003F4E7A /* MobileNetV2.mlmodel in Sources */,
 				823C3D9E255A5D5D0080EF0F /* Extensions.swift in Sources */,
+				8294B3C025B540DD00B79B51 /* SoundClassifier.mlmodel in Sources */,
 				8209063825B4B479004132B9 /* WordTagger.mlmodel in Sources */,
 				82BF84282560AD41007A3396 /* ObjectDetectionVC.swift in Sources */,
 			);
