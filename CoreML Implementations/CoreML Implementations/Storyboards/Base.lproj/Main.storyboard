@@ -177,6 +177,9 @@
                                                 <constraint firstItem="vr8-Qf-xqN" firstAttribute="leading" secondItem="v6l-mY-aio" secondAttribute="trailing" constant="13" id="sVm-3P-g1F"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="0qZ-zf-hkz" kind="show" id="euX-HP-yd4"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2SY-X5-H4q">
                                         <rect key="frame" x="20" y="229.5" width="374" height="43.5"/>
@@ -699,6 +702,96 @@
             </objects>
             <point key="canvasLocation" x="2628.985507246377" y="1076.7857142857142"/>
         </scene>
+        <!--Sound Classifier-->
+        <scene sceneID="LVZ-b9-paN">
+            <objects>
+                <viewController id="rE2-KN-ilR" customClass="SoundClassifierViewController" customModule="CoreML_Implementations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eqh-3M-s2D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not recording... " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDn-3A-q3D">
+                                <rect key="frame" x="85" y="161" width="245" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="jHu-pi-K02"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sC-Iz-TrV">
+                                <rect key="frame" x="143" y="288" width="129" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="129" id="gQy-sa-UFC"/>
+                                    <constraint firstAttribute="height" constant="30" id="x19-bs-Rz8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startRecording:" destination="rE2-KN-ilR" eventType="touchUpInside" id="P6T-hW-dtr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LrG-qT-TwA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3sC-Iz-TrV" firstAttribute="leading" secondItem="LrG-qT-TwA" secondAttribute="leading" constant="143" id="Dwy-Pl-tne"/>
+                            <constraint firstItem="DDn-3A-q3D" firstAttribute="centerX" secondItem="3sC-Iz-TrV" secondAttribute="centerX" id="Hf6-i6-7WP"/>
+                            <constraint firstItem="LrG-qT-TwA" firstAttribute="bottom" secondItem="3sC-Iz-TrV" secondAttribute="bottom" constant="495" id="U3a-qH-2fW"/>
+                            <constraint firstItem="DDn-3A-q3D" firstAttribute="top" secondItem="LrG-qT-TwA" secondAttribute="top" constant="73" id="YLt-FW-ISV"/>
+                            <constraint firstItem="3sC-Iz-TrV" firstAttribute="top" secondItem="DDn-3A-q3D" secondAttribute="bottom" constant="76" id="gnV-mI-G4R"/>
+                            <constraint firstItem="LrG-qT-TwA" firstAttribute="trailing" secondItem="3sC-Iz-TrV" secondAttribute="trailing" constant="142" id="yyZ-pr-39l"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sound Classifier" image="wave.3.left.circle" catalog="system" id="bPP-FK-jHF">
+                        <color key="badgeColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="activityLabel" destination="DDn-3A-q3D" id="eSp-iy-DdZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GGg-jr-Wxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2628.985507246377" y="1841.5178571428571"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="RBZ-Gq-hSZ">
+            <objects>
+                <tabBarController id="0qZ-zf-hkz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jKn-Nh-jzJ"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Hb-Wx-mx0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="rE2-KN-ilR" kind="relationship" relationship="viewControllers" id="KRO-5i-4EX"/>
+                        <segue destination="xha-1L-TLY" kind="relationship" relationship="viewControllers" id="XEG-mP-QQk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQW-M2-srA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629" y="1842"/>
+        </scene>
+        <!--Library Sound Classifier-->
+        <scene sceneID="sIV-aU-Nmf">
+            <objects>
+                <viewController id="xha-1L-TLY" customClass="LibrarySoundClassifierViewController" customModule="CoreML_Implementations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QHd-5J-11t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mcn-OP-Qd4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Library Sound Classifier" image="speaker.wave.2" catalog="system" id="nVp-Zc-JdR">
+                        <color key="badgeColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVZ-tW-VaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629" y="2574"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
@@ -710,6 +803,7 @@
         <image name="tag.circle" catalog="system" width="128" height="121"/>
         <image name="text.magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="video" catalog="system" width="128" height="83"/>
+        <image name="wave.3.left.circle" catalog="system" width="128" height="121"/>
         <image name="waveform.path" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

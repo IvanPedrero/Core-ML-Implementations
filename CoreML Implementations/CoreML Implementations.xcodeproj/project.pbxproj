@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8209063525B4B456004132B9 /* WordTaggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209063425B4B456004132B9 /* WordTaggerViewController.swift */; };
 		8209063825B4B479004132B9 /* WordTagger.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8209063725B4B479004132B9 /* WordTagger.mlmodel */; };
+		8237C9F125B77FDE0075FEF0 /* LibrarySoundClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237C9F025B77FDE0075FEF0 /* LibrarySoundClassifierViewController.swift */; };
 		823C3D7D255A4F5C0080EF0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C3D7C255A4F5C0080EF0F /* AppDelegate.swift */; };
 		823C3D7F255A4F5C0080EF0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C3D7E255A4F5C0080EF0F /* SceneDelegate.swift */; };
 		823C3D84255A4F5C0080EF0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823C3D82255A4F5C0080EF0F /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 		823C3D89255A4F5D0080EF0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823C3D87255A4F5D0080EF0F /* LaunchScreen.storyboard */; };
 		823C3D9E255A5D5D0080EF0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C3D9D255A5D5D0080EF0F /* Extensions.swift */; };
 		823C3DA3255A5ED10080EF0F /* ImageClassificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C3DA2255A5ED10080EF0F /* ImageClassificationVC.swift */; };
+		826AB93425B669B2003F21E6 /* SoundClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826AB93325B669B2003F21E6 /* SoundClassifierViewController.swift */; };
 		828DFEA325B3B6CA00F36B54 /* TextClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DFEA225B3B6CA00F36B54 /* TextClassificationViewController.swift */; };
 		8294B3C025B540DD00B79B51 /* SoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8294B3BF25B540DD00B79B51 /* SoundClassifier.mlmodel */; };
 		82BF84282560AD41007A3396 /* ObjectDetectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF84272560AD41007A3396 /* ObjectDetectionVC.swift */; };
@@ -27,6 +29,7 @@
 /* Begin PBXFileReference section */
 		8209063425B4B456004132B9 /* WordTaggerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTaggerViewController.swift; sourceTree = "<group>"; };
 		8209063725B4B479004132B9 /* WordTagger.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = WordTagger.mlmodel; path = "Word Tagger/WordTagger.mlmodel"; sourceTree = "<group>"; };
+		8237C9F025B77FDE0075FEF0 /* LibrarySoundClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySoundClassifierViewController.swift; sourceTree = "<group>"; };
 		823C3D79255A4F5C0080EF0F /* CoreML Implementations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreML Implementations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		823C3D7C255A4F5C0080EF0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		823C3D7E255A4F5C0080EF0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		823C3D8A255A4F5D0080EF0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823C3D9D255A5D5D0080EF0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		823C3DA2255A5ED10080EF0F /* ImageClassificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationVC.swift; sourceTree = "<group>"; };
+		826AB93325B669B2003F21E6 /* SoundClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassifierViewController.swift; sourceTree = "<group>"; };
 		828DFEA225B3B6CA00F36B54 /* TextClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextClassificationViewController.swift; sourceTree = "<group>"; };
 		8294B3BF25B540DD00B79B51 /* SoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SoundClassifier.mlmodel; path = "Sound Classifier/SoundClassifier.mlmodel"; sourceTree = "<group>"; };
 		82BF84272560AD41007A3396 /* ObjectDetectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionVC.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		823C3D97255A50040080EF0F /* CoreML  */ = {
 			isa = PBXGroup;
 			children = (
+				826AB93225B6699F003F21E6 /* Sound */,
 				828DFEA125B3B68B00F36B54 /* Text */,
 				828DFEA025B3B67A00F36B54 /* Image */,
 			);
@@ -150,6 +155,15 @@
 				823C3D9D255A5D5D0080EF0F /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		826AB93225B6699F003F21E6 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				826AB93325B669B2003F21E6 /* SoundClassifierViewController.swift */,
+				8237C9F025B77FDE0075FEF0 /* LibrarySoundClassifierViewController.swift */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		828DFEA025B3B67A00F36B54 /* Image */ = {
@@ -273,7 +287,9 @@
 				823C3DA3255A5ED10080EF0F /* ImageClassificationVC.swift in Sources */,
 				828DFEA325B3B6CA00F36B54 /* TextClassificationViewController.swift in Sources */,
 				82BF842B2560BBC8007A3396 /* YOLOv3Tiny.mlmodel in Sources */,
+				8237C9F125B77FDE0075FEF0 /* LibrarySoundClassifierViewController.swift in Sources */,
 				823C3D7D255A4F5C0080EF0F /* AppDelegate.swift in Sources */,
+				826AB93425B669B2003F21E6 /* SoundClassifierViewController.swift in Sources */,
 				823C3D7F255A4F5C0080EF0F /* SceneDelegate.swift in Sources */,
 				82FD3E66255F8CBA003F4E7A /* MobileNetV2.mlmodel in Sources */,
 				823C3D9E255A5D5D0080EF0F /* Extensions.swift in Sources */,
