@@ -22,12 +22,36 @@ extension UIView {
 }
 
 extension AVCaptureVideoPreviewLayer {
-    
     func resizeSubview(with bounds:CGRect){
         self.videoGravity = AVLayerVideoGravity.resizeAspectFill
         self.bounds = bounds
         self.position = CGPoint(x: bounds.midX, y: bounds.midY)
         self.contentsGravity = CALayerContentsGravity.resize
     }
-    
+}
+
+extension Double {
+    func formatConfidence() -> String {
+        let perCentConfidence = self * 100.0
+        return String(format: "%.2f%%", perCentConfidence)
+    }
+}
+
+extension String {
+    func getEmojiInstrument() -> String {
+        switch self {
+        case "drums":
+            return "🥁"
+        case "guitar":
+            return "🎸"
+        case "piano":
+            return "🎹"
+        case "sax":
+            return "🎷"
+        case "vio":
+            return  "🎻"
+        default:
+            return ""
+        }
+    }
 }

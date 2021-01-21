@@ -3,7 +3,10 @@ import SoundAnalysis
 
 class SoundClassifierViewController: UIViewController, SNResultsObserving {
     
-    @IBOutlet weak var activityLabel: UILabel!
+    // UI Variables.
+    @IBOutlet weak var outputTextView: UITextView!
+    @IBOutlet weak var outView: UIView!
+    @IBOutlet weak var predictButton: UIButton!
     
     // Core ML model variables.
     let coreMlModel = SoundClassifier()
@@ -16,14 +19,32 @@ class SoundClassifierViewController: UIViewController, SNResultsObserving {
     
     // Private variables.
     private var isRecording: Bool = false
+    
+    // Constants.
     private let BUFFER_8K:UInt32 = 8192
+    private let NOT_RECORDING_LABEL = "Not recording..."
+    private let START_RECORDING_LABEL = "Start recording"
+    private let STOP_RECORDING_LABEL = "Stop recording"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setUpView()
+        
         initAudioEngine()
         initRecordingPrediction()
+        stopRecording()
+    }
+    
+    /**
+     Give some style to the view.
+     */
+    func setUpView(){
+        outView.roundBorders(radius: 15)
+        outView.drawShadow(radius: 10)
+        
+        predictButton.roundBorders(radius: 10)
     }
     
     
@@ -37,12 +58,14 @@ class SoundClassifierViewController: UIViewController, SNResultsObserving {
         }
     }
     
-    func startRecording(){
+    func startRecording() {
+        predictButton.setTitle(STOP_RECORDING_LABEL, for: .normal)
         isRecording = true
     }
     
-    func stopRecording(){
-        self.activityLabel.text = "Not recording..."
+    func stopRecording() {
+        predictButton.setTitle(START_RECORDING_LABEL, for: .normal)
+        self.outputTextView.text = NOT_RECORDING_LABEL
         isRecording = false
     }
     
@@ -115,16 +138,15 @@ class SoundClassifierViewController: UIViewController, SNResultsObserving {
 
         // Get the confidence.
         let label = classification.identifier
-        let confidence = classification.confidence * 100.0
-        let formattedConfidence = String(format: "%.2f%%", confidence)
+        let confidence = classification.confidence.formatConfidence()
 
         // Output string.
-        var output = "Instrument detected: \(label) \n"
-        output += "Confidence: \(formattedConfidence)%"
+        var output = "Instrument detected: \(label) \(label.getEmojiInstrument()) \n\n"
+        output += "Confidence: \(confidence)%"
         
         // Show the results within the main thread.
         DispatchQueue.main.async {
-            self.activityLabel.text = output
+            self.outputTextView.text = output
         }
     }
 }

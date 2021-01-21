@@ -710,43 +710,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not recording... " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDn-3A-q3D">
-                                <rect key="frame" x="85" y="161" width="245" height="51"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Realtime Instrument Classifier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6co-kY-diG">
+                                <rect key="frame" x="81.5" y="122" width="251" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="jHu-pi-K02"/>
+                                    <constraint firstAttribute="height" constant="26" id="4Ps-JN-mwo"/>
+                                    <constraint firstAttribute="width" constant="251" id="JBV-5M-Rr0"/>
+                                    <constraint firstAttribute="width" secondItem="6co-kY-diG" secondAttribute="height" multiplier="251:26" id="WJW-tk-Scn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sC-Iz-TrV">
-                                <rect key="frame" x="143" y="288" width="129" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predicts which instrument the device is listening to" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2w-Xh-joZ">
+                                <rect key="frame" x="62" y="172" width="290" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="129" id="gQy-sa-UFC"/>
-                                    <constraint firstAttribute="height" constant="30" id="x19-bs-Rz8"/>
+                                    <constraint firstAttribute="width" constant="290" id="8VW-fP-epl"/>
+                                    <constraint firstAttribute="width" secondItem="D2w-Xh-joZ" secondAttribute="height" multiplier="58:11" id="P3a-nn-SI1"/>
+                                    <constraint firstAttribute="height" constant="55" id="itr-G3-6VS"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNS-Pi-ylu" userLabel="Out View">
+                                <rect key="frame" x="20" y="368" width="374" height="349"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-4g-OSd">
+                                        <rect key="frame" x="23" y="20" width="328" height="307"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="LCw-qX-gob"/>
+                                    <constraint firstAttribute="width" secondItem="rNS-Pi-ylu" secondAttribute="height" multiplier="374:349" id="Vu6-qL-teV"/>
+                                    <constraint firstAttribute="height" constant="349" id="xN2-0l-cCo"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iph-TD-iMY">
+                                <rect key="frame" x="96" y="267" width="222" height="47"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Fce-he-egf"/>
+                                    <constraint firstAttribute="width" constant="222" id="aNF-VF-wje"/>
+                                    <constraint firstAttribute="width" secondItem="iph-TD-iMY" secondAttribute="height" multiplier="222:47" id="dQd-gH-z35"/>
+                                </constraints>
+                                <state key="normal" title="Start Predicting">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="startRecording:" destination="rE2-KN-ilR" eventType="touchUpInside" id="P6T-hW-dtr"/>
+                                    <action selector="startRecording:" destination="rE2-KN-ilR" eventType="touchUpInside" id="iUy-Sg-m6x"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LrG-qT-TwA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3sC-Iz-TrV" firstAttribute="leading" secondItem="LrG-qT-TwA" secondAttribute="leading" constant="143" id="Dwy-Pl-tne"/>
-                            <constraint firstItem="DDn-3A-q3D" firstAttribute="centerX" secondItem="3sC-Iz-TrV" secondAttribute="centerX" id="Hf6-i6-7WP"/>
-                            <constraint firstItem="LrG-qT-TwA" firstAttribute="bottom" secondItem="3sC-Iz-TrV" secondAttribute="bottom" constant="495" id="U3a-qH-2fW"/>
-                            <constraint firstItem="DDn-3A-q3D" firstAttribute="top" secondItem="LrG-qT-TwA" secondAttribute="top" constant="73" id="YLt-FW-ISV"/>
-                            <constraint firstItem="3sC-Iz-TrV" firstAttribute="top" secondItem="DDn-3A-q3D" secondAttribute="bottom" constant="76" id="gnV-mI-G4R"/>
-                            <constraint firstItem="LrG-qT-TwA" firstAttribute="trailing" secondItem="3sC-Iz-TrV" secondAttribute="trailing" constant="142" id="yyZ-pr-39l"/>
+                            <constraint firstItem="LrG-qT-TwA" firstAttribute="trailing" secondItem="rNS-Pi-ylu" secondAttribute="trailing" constant="20" id="CAG-Xp-EQO"/>
+                            <constraint firstItem="6co-kY-diG" firstAttribute="top" secondItem="LrG-qT-TwA" secondAttribute="top" constant="34" id="Imu-X1-355"/>
+                            <constraint firstItem="D2w-Xh-joZ" firstAttribute="centerX" secondItem="Eqh-3M-s2D" secondAttribute="centerX" id="Lwv-NL-KEH"/>
+                            <constraint firstItem="D2w-Xh-joZ" firstAttribute="top" secondItem="6co-kY-diG" secondAttribute="bottom" constant="24" id="NZg-au-4dD"/>
+                            <constraint firstItem="6co-kY-diG" firstAttribute="centerX" secondItem="Eqh-3M-s2D" secondAttribute="centerX" id="ZIL-pp-rCq"/>
+                            <constraint firstItem="iph-TD-iMY" firstAttribute="top" secondItem="D2w-Xh-joZ" secondAttribute="bottom" constant="40" id="bDo-UT-oqf"/>
+                            <constraint firstItem="LrG-qT-TwA" firstAttribute="bottom" secondItem="rNS-Pi-ylu" secondAttribute="bottom" constant="96" id="c3e-mD-Dge"/>
+                            <constraint firstItem="rNS-Pi-ylu" firstAttribute="top" secondItem="iph-TD-iMY" secondAttribute="bottom" constant="54" id="d0u-Rh-rLS"/>
+                            <constraint firstItem="iph-TD-iMY" firstAttribute="centerX" secondItem="Eqh-3M-s2D" secondAttribute="centerX" id="gqv-Wq-RYS"/>
+                            <constraint firstItem="rNS-Pi-ylu" firstAttribute="leading" secondItem="LrG-qT-TwA" secondAttribute="leading" constant="20" id="zNZ-rg-zrI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sound Classifier" image="wave.3.left.circle" catalog="system" id="bPP-FK-jHF">
                         <color key="badgeColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="activityLabel" destination="DDn-3A-q3D" id="eSp-iy-DdZ"/>
+                        <outlet property="outView" destination="rNS-Pi-ylu" id="Cha-1f-Cba"/>
+                        <outlet property="outputTextView" destination="vsV-4g-OSd" id="Zvz-S2-pDh"/>
+                        <outlet property="predictButton" destination="iph-TD-iMY" id="J4K-a7-5UP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGg-jr-Wxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

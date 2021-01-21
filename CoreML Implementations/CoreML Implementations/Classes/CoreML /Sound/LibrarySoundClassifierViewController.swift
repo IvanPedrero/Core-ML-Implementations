@@ -58,13 +58,9 @@ class LibrarySoundClassifierViewController: UIViewController, MPMediaPickerContr
         guard let result = result as? SNClassificationResult,
             let classification = result.classifications.first else { return }
         
-        // Determine the time of this result.
-        let confidence = classification.confidence * 100.0
-        let formattedConfidence = String(format: "%.2f%%", confidence)
-        
         // Save the latest results, as the request will continue until finished the audio.
         classificationLabel = classification.identifier
-        classificationConfidence = formattedConfidence
+        classificationConfidence = classification.confidence.formatConfidence()
     }
     
     func request(_ request: SNRequest, didFailWithError error: Error) {
@@ -116,7 +112,7 @@ class LibrarySoundClassifierViewController: UIViewController, MPMediaPickerContr
     
     func showResults(label: String, confidence: String){
         // Output string.
-        var output = "Instrument detected: \(label) \n"
+        var output = "Instrument detected: \(label) \(label.getEmojiInstrument()) \n\n"
         output += "Confidence: \(confidence)%"
         
         // Show the results within the main thread.
