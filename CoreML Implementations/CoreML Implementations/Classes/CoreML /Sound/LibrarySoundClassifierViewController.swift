@@ -12,6 +12,12 @@ import SoundAnalysis
 
 class LibrarySoundClassifierViewController: UIViewController, MPMediaPickerControllerDelegate, SNResultsObserving {
     
+    // UI Variables.
+    @IBOutlet weak var outputTextView: UITextView!
+    @IBOutlet weak var outView: UIView!
+    @IBOutlet weak var predictButton: UIButton!
+    
+    
     // Core ML model variables.
     let coreMlModel = SoundClassifier()
     
@@ -24,6 +30,20 @@ class LibrarySoundClassifierViewController: UIViewController, MPMediaPickerContr
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setUpView()
+    }
+    
+    /**
+     Give some style to the view.
+     */
+    func setUpView(){
+        outView.roundBorders(radius: 15)
+        outView.drawShadow(radius: 10)
+        
+        predictButton.roundBorders(radius: 10)
+    }
+    
+    @IBAction func loadAudio(_ sender: Any) {
         openMediaPicker()
     }
     
@@ -117,9 +137,8 @@ class LibrarySoundClassifierViewController: UIViewController, MPMediaPickerContr
         
         // Show the results within the main thread.
         DispatchQueue.main.async {
-            //self.activityLabel.text = output
+            self.outputTextView.text = output
         }
-        print(output)
     }
     
     func showError(error:String) {
