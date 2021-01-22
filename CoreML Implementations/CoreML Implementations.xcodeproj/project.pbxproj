@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8205013B25BB3DE7002361D5 /* SoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8205013825BB3DE3002361D5 /* SoundClassifier.mlmodel */; };
+		8205013C25BB3DE7002361D5 /* WordTagger.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8205013925BB3DE5002361D5 /* WordTagger.mlmodel */; };
+		8205013D25BB3DE7002361D5 /* TextClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8205013A25BB3DE7002361D5 /* TextClassifier.mlmodel */; };
 		8209063525B4B456004132B9 /* WordTaggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209063425B4B456004132B9 /* WordTaggerViewController.swift */; };
-		8209063825B4B479004132B9 /* WordTagger.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8209063725B4B479004132B9 /* WordTagger.mlmodel */; };
 		8237C9F125B77FDE0075FEF0 /* LibrarySoundClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237C9F025B77FDE0075FEF0 /* LibrarySoundClassifierViewController.swift */; };
 		823C3D7D255A4F5C0080EF0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C3D7C255A4F5C0080EF0F /* AppDelegate.swift */; };
 		823C3D7F255A4F5C0080EF0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C3D7E255A4F5C0080EF0F /* SceneDelegate.swift */; };
@@ -19,16 +21,16 @@
 		823C3DA3255A5ED10080EF0F /* ImageClassificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C3DA2255A5ED10080EF0F /* ImageClassificationVC.swift */; };
 		826AB93425B669B2003F21E6 /* SoundClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826AB93325B669B2003F21E6 /* SoundClassifierViewController.swift */; };
 		828DFEA325B3B6CA00F36B54 /* TextClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DFEA225B3B6CA00F36B54 /* TextClassificationViewController.swift */; };
-		8294B3C025B540DD00B79B51 /* SoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8294B3BF25B540DD00B79B51 /* SoundClassifier.mlmodel */; };
 		82BF84282560AD41007A3396 /* ObjectDetectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF84272560AD41007A3396 /* ObjectDetectionVC.swift */; };
 		82BF842B2560BBC8007A3396 /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 82BF842A2560BBC8007A3396 /* YOLOv3Tiny.mlmodel */; };
-		82E0B7CB25B4DE50006F18BC /* TextClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 82E0B7CA25B4DE50006F18BC /* TextClassifier.mlmodel */; };
 		82FD3E66255F8CBA003F4E7A /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 82FD3E65255F8CBA003F4E7A /* MobileNetV2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8205013825BB3DE3002361D5 /* SoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SoundClassifier.mlmodel; sourceTree = "<group>"; };
+		8205013925BB3DE5002361D5 /* WordTagger.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WordTagger.mlmodel; sourceTree = "<group>"; };
+		8205013A25BB3DE7002361D5 /* TextClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TextClassifier.mlmodel; sourceTree = "<group>"; };
 		8209063425B4B456004132B9 /* WordTaggerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTaggerViewController.swift; sourceTree = "<group>"; };
-		8209063725B4B479004132B9 /* WordTagger.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = WordTagger.mlmodel; path = "Word Tagger/WordTagger.mlmodel"; sourceTree = "<group>"; };
 		8237C9F025B77FDE0075FEF0 /* LibrarySoundClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySoundClassifierViewController.swift; sourceTree = "<group>"; };
 		823C3D79255A4F5C0080EF0F /* CoreML Implementations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreML Implementations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		823C3D7C255A4F5C0080EF0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,10 +43,8 @@
 		823C3DA2255A5ED10080EF0F /* ImageClassificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationVC.swift; sourceTree = "<group>"; };
 		826AB93325B669B2003F21E6 /* SoundClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassifierViewController.swift; sourceTree = "<group>"; };
 		828DFEA225B3B6CA00F36B54 /* TextClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextClassificationViewController.swift; sourceTree = "<group>"; };
-		8294B3BF25B540DD00B79B51 /* SoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SoundClassifier.mlmodel; path = "Sound Classifier/SoundClassifier.mlmodel"; sourceTree = "<group>"; };
 		82BF84272560AD41007A3396 /* ObjectDetectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionVC.swift; sourceTree = "<group>"; };
 		82BF842A2560BBC8007A3396 /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
-		82E0B7CA25B4DE50006F18BC /* TextClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TextClassifier.mlmodel; path = "Text Classifier/TextClassifier.mlmodel"; sourceTree = "<group>"; };
 		82FD3E65255F8CBA003F4E7A /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,9 +196,9 @@
 		828DFEA825B3B89800F36B54 /* CreateML */ = {
 			isa = PBXGroup;
 			children = (
-				82E0B7CA25B4DE50006F18BC /* TextClassifier.mlmodel */,
-				8209063725B4B479004132B9 /* WordTagger.mlmodel */,
-				8294B3BF25B540DD00B79B51 /* SoundClassifier.mlmodel */,
+				8205013825BB3DE3002361D5 /* SoundClassifier.mlmodel */,
+				8205013A25BB3DE7002361D5 /* TextClassifier.mlmodel */,
+				8205013925BB3DE5002361D5 /* WordTagger.mlmodel */,
 			);
 			path = CreateML;
 			sourceTree = "<group>";
@@ -283,18 +283,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8209063525B4B456004132B9 /* WordTaggerViewController.swift in Sources */,
-				82E0B7CB25B4DE50006F18BC /* TextClassifier.mlmodel in Sources */,
 				823C3DA3255A5ED10080EF0F /* ImageClassificationVC.swift in Sources */,
 				828DFEA325B3B6CA00F36B54 /* TextClassificationViewController.swift in Sources */,
 				82BF842B2560BBC8007A3396 /* YOLOv3Tiny.mlmodel in Sources */,
+				8205013D25BB3DE7002361D5 /* TextClassifier.mlmodel in Sources */,
 				8237C9F125B77FDE0075FEF0 /* LibrarySoundClassifierViewController.swift in Sources */,
 				823C3D7D255A4F5C0080EF0F /* AppDelegate.swift in Sources */,
 				826AB93425B669B2003F21E6 /* SoundClassifierViewController.swift in Sources */,
 				823C3D7F255A4F5C0080EF0F /* SceneDelegate.swift in Sources */,
 				82FD3E66255F8CBA003F4E7A /* MobileNetV2.mlmodel in Sources */,
+				8205013C25BB3DE7002361D5 /* WordTagger.mlmodel in Sources */,
+				8205013B25BB3DE7002361D5 /* SoundClassifier.mlmodel in Sources */,
 				823C3D9E255A5D5D0080EF0F /* Extensions.swift in Sources */,
-				8294B3C025B540DD00B79B51 /* SoundClassifier.mlmodel in Sources */,
-				8209063825B4B479004132B9 /* WordTagger.mlmodel in Sources */,
 				82BF84282560AD41007A3396 /* ObjectDetectionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -714,7 +714,7 @@
                                 <rect key="frame" x="81.5" y="122" width="251" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="4Ps-JN-mwo"/>
-                                    <constraint firstAttribute="width" constant="251" id="JBV-5M-Rr0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="251" id="JBV-5M-Rr0"/>
                                     <constraint firstAttribute="width" secondItem="6co-kY-diG" secondAttribute="height" multiplier="251:26" id="WJW-tk-Scn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
@@ -724,7 +724,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predicts which instrument the device is listening to" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2w-Xh-joZ">
                                 <rect key="frame" x="62" y="172" width="290" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="8VW-fP-epl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="290" id="8VW-fP-epl"/>
                                     <constraint firstAttribute="width" secondItem="D2w-Xh-joZ" secondAttribute="height" multiplier="58:11" id="P3a-nn-SI1"/>
                                     <constraint firstAttribute="height" constant="55" id="itr-G3-6VS"/>
                                 </constraints>
@@ -755,8 +755,7 @@
                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="Fce-he-egf"/>
-                                    <constraint firstAttribute="width" constant="222" id="aNF-VF-wje"/>
-                                    <constraint firstAttribute="width" secondItem="iph-TD-iMY" secondAttribute="height" multiplier="222:47" id="dQd-gH-z35"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="222" id="aNF-VF-wje"/>
                                 </constraints>
                                 <state key="normal" title="Start Predicting">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -828,7 +827,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="gi6-ix-a62"/>
                                     <constraint firstAttribute="width" secondItem="SeV-kS-F7G" secondAttribute="height" multiplier="251:26" id="pTp-GM-RHR"/>
-                                    <constraint firstAttribute="width" constant="251" id="tTe-cp-pyg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="251" id="tTe-cp-pyg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                 <nil key="textColor"/>
@@ -838,7 +837,7 @@
                                 <rect key="frame" x="62" y="172" width="290" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i7T-kc-Q9r" secondAttribute="height" multiplier="58:11" id="CDW-sp-pEK"/>
-                                    <constraint firstAttribute="width" constant="290" id="DLE-AJ-9oJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="290" id="DLE-AJ-9oJ"/>
                                     <constraint firstAttribute="height" constant="55" id="lD1-xV-oQl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
@@ -867,9 +866,8 @@
                                 <rect key="frame" x="96" y="267" width="222" height="47"/>
                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="200-MB-KNg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="222" id="200-MB-KNg"/>
                                     <constraint firstAttribute="height" constant="47" id="Tsi-de-3EF"/>
-                                    <constraint firstAttribute="width" secondItem="sCL-T8-C8F" secondAttribute="height" multiplier="222:47" id="qz4-96-mIg"/>
                                 </constraints>
                                 <state key="normal" title="Load audio">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
